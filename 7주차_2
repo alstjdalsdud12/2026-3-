@@ -1,0 +1,33 @@
+AI 개발팀 구축
+ 소프트웨어 개발팀 구성과 역할
+  - 실제 개발팀의 역할을 5개 서브에ㅣㅇ전트로 재현합니다.
+  1. product-manager-prd -> 제품 기획, 요구사항정의(PRD) ->Red
+  2. backend-architect -> 백엔드 설계, 서버.API 구현 -> Blue
+  3. frontend-developer -> 프런트 UX/UX 구현 -> Green
+  4. qa-engineer -> 테스트, 품질 보증 -> Yellow
+  5. ai-intergration-specialist -> AI모델 연동 전문가 -> Purple
+
+  MCP란?
+   AI모델이 외부 데이터, 도구, 서비스와 연결할 때 사용하는 표준화된 통신 규약입니다.
+   
+   API vs MCP
+   비유 : 특정 가게 하나의 대화 창구 - 여러 가게를 한꺼번에 관리하는 표준 규격
+   연결 대상 : 특정 서비스 1개 - 다양한 데이터.도구를 통합 관리
+   사용자 : 개발자가 직접 코드 작성 - AI가 스스로 도구를 선택하여 활용
+
+ 클라이언트-서버 모델
+  클로드 코드 = MCP 클라이언트(요청하는 쪽)
+  노션, 깃허브, Playwright 등 = MCP서버 (서비스를 제공하는 쪽)
+
+ 두가지 MCP 유형
+                                로컬MCP - 원격MCP
+  실행 위치 : 내 컴퓨터 안에서 직접 실행 - 인터넷상 외부 서버에서 실행
+                      인터넷 : 필요없음 - 반드시 필요
+                    설정 : 조금 더 복잡 - 간단 (URL만 지정)
+                 속도 : 빠름(로컬 실행) - 네트워크에 따라 다름
+            보안 : 개인정보 보호에 유리 - 인증 절차 필요
+
+  원격 MCP 명령어 구조
+   claude mcp add --transport http [이름] [서버 URL]
+  로컬 MCP 명령어 구조
+   claude mcp add [이름] [옵션] -- [MCP 실행 명령]
